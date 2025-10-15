@@ -22,3 +22,6 @@ df['Years of Experience'].fillna(df['Years of Experience'].median(), inplace=Tru
 #replace the infinety values with NaN
 df.replace({np.inf: np.nan, -np.inf: np.nan}, inplace=True)
 df.fillna(df.mean(), inplace=True)
+
+#remove the duplicates
+df.drop_duplicates(inplace=True)

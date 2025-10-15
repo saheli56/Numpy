@@ -8,3 +8,13 @@ print(df.head())
 #checking the missing values
 print('Missing values in each column:')
 print(df.isnull().sum())
+
+#filling missing values with the mean of the column
+df['status'].fillna(df['status'].mode()[0], inplace=True)
+df['Age Group'].fillna(df['Age Group'].mode()[0], inplace=True)
+df['Education'].fillna(df['Education'].mode()[0], inplace=True)
+df['Industry'].fillna(df['Industry'].mode()[0], inplace=True)
+df['Location'].fillna(df['Location'].mode()[0], inplace=True)
+df['AI Risk'].fillna(df['AI Risk'].mode()[0], inplace=True)
+df['Monthly Salary (INR)'].fillna(df['Monthly Salary (INR)'].mean(), inplace=True)
+df['Years of Experience'].fillna(df['Years of Experience'].median(), inplace=True)
